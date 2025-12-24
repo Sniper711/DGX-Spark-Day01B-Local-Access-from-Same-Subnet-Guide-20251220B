@@ -1,4 +1,5 @@
-# DGX Spark + Open WebUI 日常使用 SOP
+# DGX Spark (第02天) 啟動 Open WebUI container 2025-12-26  🟩 [中文版]()
+
 
 本文件說明在 **DGX Spark（Linux）** 上部署並日常使用 **Open WebUI（Docker）**，以及在 **Mac** 端透過 **SSH port forwarding** 存取 WebUI 的標準流程。本 SOP 已避開 NVIDIA Sync 的不穩定 App Proxy，採用工程上最穩定、可預期的做法。
 
