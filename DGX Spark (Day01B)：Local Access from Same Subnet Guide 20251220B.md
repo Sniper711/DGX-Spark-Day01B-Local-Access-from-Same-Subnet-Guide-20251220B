@@ -1,7 +1,7 @@
 # DGX Spark (Day01B)：Local Access from Same Subnet Guide 20251220B
 ## 🟩 English
 > ## Scenarios & Advantages
-> **From a local network on Mac/PC → SSH login to DGX Spark at local network**
+> **From a local network on Mac/PC → SSH login to DGX Spark at the same subnet**
 >
 > - 超簡單上手的 SSH
 >   - 用一行 SSH 指令連線
