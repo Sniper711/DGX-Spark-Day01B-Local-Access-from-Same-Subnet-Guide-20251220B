@@ -5,15 +5,17 @@
 >
 > **「在內網同網段內」 使用 Mac/PC → 透過 SSH 指令 → 存取 DGX Spark**
 >
-> 上述內網同網段的定義是：
-> - **Mac/PC (Client) 與 DGX Spark (Server) 處於相同 router 所分配的內網IP (192.168.x.x) 區段之下。**
+> 內網同網段是指：
+> - **Mac/PC (Client) 與 DGX Spark (Server) 處於相同一台 router 所分配的內網IP (192.168.x.x) 區段之下。**
 > 
-> 額外說明一：這(第01天之B)情境，與 NVIDIA SYNC 官方文件的要求完全相同
+> 補充：這(第01天之B)情境，與 NVIDIA SYNC 官方文件的要求完全相同
 > - "Access the system **over your local network** from another computer."
 >
-> 額外說明二：若你不滿足於 Client/Server 僅能在內網內同網段互聯，而是尋求 Client 能自由從外網 (或內網不同網段) 與 Server 相連，請
-> - 不要看這一篇 (第01天之B)：內網同網段 SSH 連線指南 2025-12-26-B
+> 補充：**若你不滿足於 Client/Server 僅能在內網內同網段互聯**，而是尋求 Client 能自由從外網 (或內網不同網段) 與 Server 相連，請
+> - **不要看這一篇** (第01天之B)：內網同網段 SSH 連線指南 2025-12-26-B
 > - 改依照上一篇 (第01天之A)：外網 WinreGuard VPN 連線指南 2025-12-26-A
+>
+> 
 > **The Mac/PC client can "only be used within an intranet and must be on the same subnet" as the DGX server machine.**
 
 > **人在外網用 Mac/PC → 透過 WireGuard VPN → 連回家 存取 DGX Spark**
