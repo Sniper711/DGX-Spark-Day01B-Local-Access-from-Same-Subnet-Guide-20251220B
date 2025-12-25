@@ -15,9 +15,10 @@
 > - **不要看這一篇** (第01天之B)：內網同網段 SSH 連線指南 2025-12-26-B
 > - 改依照上一篇 (第01天之A)：外網 WinreGuard VPN 連線指南 2025-12-26-A
 >
+>
 > 
-> **The Mac/PC client can "only be used within an intranet and must be on the same subnet" as the DGX server machine.**
-
+>
+> 
 > **人在外網用 Mac/PC → 透過 WireGuard VPN → 連回家 存取 DGX Spark**
 > - 全面改用 WireGuard
 >   - 以 DGX Spark 為 VPN Server. (Mac/PC = Client)
