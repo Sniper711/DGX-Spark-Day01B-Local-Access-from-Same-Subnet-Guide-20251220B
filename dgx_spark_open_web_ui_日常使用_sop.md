@@ -1,4 +1,32 @@
-# DGX Spark + Open WebUI 日常使用 SOP
+# DGX Spark (第01天之B)：內網同網段 SSH 連線指南 2025-12-26-B
+## 🟩 中文版
+> ## 適用情境 與 優點
+> 這篇 **(第01天之B)** 適用情境是：
+> **「在內網同網段內」 使用 Mac/PC → 透過 SSH 指令 → 存取 DGX Spark**
+> 內網同網段的意義是：
+> - **Mac/PC (Client) 與 DGX Spark (Server) 處於相同 router 所分配的內網IP (192.168.x.x) 區段之下。**
+> 這(第01天之B)情境，與 NVIDIA SYNC 官方文件的要求相同：
+> - "Access the system **over your local network** from another computer."
+> 
+> **The Mac/PC client can "only be used within an intranet and must be on the same subnet" as the DGX server machine.**
+
+> **人在外網用 Mac/PC → 透過 WireGuard VPN → 連回家 存取 DGX Spark**
+> - 全面改用 WireGuard
+>   - 以 DGX Spark 為 VPN Server. (Mac/PC = Client)
+>   - VPN 穿透率極高，行動網路開熱點上網幾乎不被行動網路阻擋.
+>   - WireGuard 設定 UDP 51820 Port 搭配 keepalive 是正解.
+>   - 90% 在台灣行動網路，WireGuard 能過，OpenVPN 過不了.
+> - 不用 Tunnelblick 與 OpenVPN，不用昂貴 Router 的內建 VPN Server 
+>   - 行動網路開熱點連VPN失敗主因之一：電信商刻意阻擋行動網路的 UDP/TCP 1194 Ports VPN 流量.
+>     - 改用 TCP 443 Port 能增強 VPN 穿透率，相對穩定但速度慢，在行動網路可能有TCP-over-TCP隊頭阻塞(HOL Blocking)導致熔斷(Meltdown)問題.
+>     - 某些昂貴的 Router 無法改 TCP Port# 也是問題 (僅有 TCP 1194 Port).
+>   - 行動網路開熱點連VPN失敗主因之二：行動網路NAT導致UDP丟包.
+>     - Tunnelblick 與 OpenVPN 雖然使用UDP，但內部實作卻類似TCP與SSL/TLS，步驟多，在行動網路容易中途斷掉.
+>   - 有鑑於此，不用 Tunnelblick 與 OpenVPN
+> - 用低階的 Router
+>   - Router：需有 固定 Public IP (x.x.x.x), 需支援 Port Forward.
+>   - 因為不使用 Tunnerblick 與 OpenVPN，所以 Router 並不需要 VPN 高階功能 (有則關閉之)，只需便宜的 Router.
+
 
 本文件說明在 **DGX Spark（Linux）** 上部署並日常使用 **Open WebUI（Docker）**，以及在 **Mac** 端透過 **SSH port forwarding** 存取 WebUI 的標準流程。本 SOP 已避開 NVIDIA Sync 的不穩定 App Proxy，採用工程上最穩定、可預期的做法。
 
