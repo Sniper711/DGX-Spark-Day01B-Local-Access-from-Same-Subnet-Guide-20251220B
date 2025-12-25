@@ -1,4 +1,4 @@
-# DGX Spark (第01天B)：同子網內網操控 指南 20251220B
+# DGX Spark (Day01B)：Local Access from Same Subnet Guide 20251220B
 ## 🟩 中文版
 > ## 適用情境 與 特點
 > **人在同子網內網用 Mac/PC → 透過 SSH 指令 → 存取同子網內網的 DGX Spark**
