@@ -22,16 +22,18 @@ This severely limits the physical distance between Client and Server.
 
 ## 2. On the DGX Spark server, query its internal IP address on the same subnet
 Method 1
+
+Find the DGX Spark's IP address that starts with (192.168.x.x), and make a note of it.
 ```
 jostname -I
 ```
-Find the DGX Spark's IP address that starts with (192.168.x.x), and make a note of it.
 
 Method 2
+
+Find the text `inet addr:` or `inet`, followed by an address that starts with (192.168.x.x)—this is the DGX Spark's internal IP address on the same subnet—and make a note of it.
 ```
 ifconfig
 ```
-Find the text `inet addr:` or `inet`, followed by an address that starts with (192.168.x.x)—this is the DGX Spark's internal IP address on the same subnet—and make a note of it.
 
 ---
 
