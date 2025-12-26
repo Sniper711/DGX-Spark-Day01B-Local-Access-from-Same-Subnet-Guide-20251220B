@@ -35,28 +35,28 @@ Find the text `inet addr:` or `inet`, followed by an address that starts with (1
 
 ---
 
-## 3. 在 Client (Mac/PC) 用一行 SSH 指令，建立與 Server (DGX Spark) 的連線
-正確結果應該是能成功，若已成功連線，會要求輸入 DGX Spark 開機登入密碼
+## 3. Login and Command the DGX Spark Server
+### 3.1 SHH Login to the DGX Spark Server from your Mac/PC Client
+Use the following simple one-line **SSH** command to login DGX Spark Server. (you'll need to enter the DGX Spark boot password)
 ```
-# 把 <DGX Spark username> 包含括弧刪掉, 置換成 DGX Spark 開機後登入的 username
-# 把 <192.168.x.x> 包含括弧刪掉, 置換成 DGX Spark 的 同子網內網IP位址
+# Remove `<DGX Spark username>`, and replace it with the username used to log in after DGX Spark boots
+# Remove `<192.168.x.x>`, and replace it with DGX Spark intranet IP address (192.168.x.x)
 ssh <DGX Spark username>@<192.168.x.x>
 ```
 
----
-
-# **恭喜你！從此你能從「同子網內網」連上你心愛的 DGX Spark 了！**
-
----
-
-## 4 連線成功後，能下指令監控 Server (DGX Spark) 的狀態
-方法一，從 Client (Mac/PC) 下指令，每秒監控一次 Server (DGX Spark) 的 GPU 溫度 (GPU Temp欄位) 、GPU使用率 (GPU-Util欄位)
+### 3.2 Two Example Methods to Command the DGX Spark Server
+**Command the DGX Spark Server from your Mac/PC Client**
+Method 1: Command the DGX Spark server to report GPU temperature (GPU Temp column) and GPU utilization (GPU-Util column) once per second.
 ```
 watch -n 1 nvidia-smi
 ```
 
-方法二，從 Client (Mac/PC) 下指令，每秒監控一次 Server (DGX Spark) 系統記憶體的 總量 (total欄位)、當前使用量 (used欄位)
-
+Method 2: Command the DGX Spark server to report total system memory (total column) and current usage (used column) once per second.
 ```
 watch -n 1 free -h
 ```
+You should see both methods working correctly.  
+
+---
+
+# **恭喜你！從此你能從「同子網內網」連上你心愛的 DGX Spark 了！**
