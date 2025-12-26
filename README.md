@@ -4,7 +4,7 @@
 
 ## Scenarios & Pros/Cons
 
-From an external network on Mac/PC → via WireGuard VPN → SSH login to DGX Spark at home
+From a local network on Mac/PC → SSH login to DGX Spark at the same subnet
 
     Use WireGuard VPN
         Use DGX Spark as VPN Server. (Mac/PC = Client)
