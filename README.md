@@ -22,29 +22,23 @@ Congratulations — your Mac/PC can now reach your DGX Spark from the same subne
 
 ## 適用情境 與 優缺點
 
-人在外網用 Mac/PC → 透過 WireGuard VPN → SSH 登入家中 DGX Spark
+人在同子網內網用 Mac/PC → SSH 登入同子網內網的 DGX Spark
 
-    全面改用 WireGuard VPN
-        以 DGX Spark 為 VPN Server. (Mac/PC = Client)
-        VPN 穿透率極高，行動網路開熱點上網幾乎不被行動網路阻擋.
-        WireGuard 設定 UDP 51820 Port 搭配 keepalive 是正解.
-        90% 在台灣行動網路，WireGuard 能過，OpenVPN 過不了.
-    不用 Tunnelblick 與 OpenVPN，不用昂貴 Router 的內建 VPN Server
-        行動網路開熱點連VPN失敗主因之一：電信商刻意阻擋行動網路的 UDP/TCP 1194 Ports VPN 流量.
-            改用 TCP 443 Port 能增強 VPN 穿透率，相對穩定但速度慢，在行動網路可能有TCP-over-TCP隊頭阻塞(HOL Blocking)導致熔斷(Meltdown)問題.
-            某些昂貴的 Router 無法改 TCP Port# 也是問題 (僅有 TCP 1194 Port).
-        行動網路開熱點連VPN失敗主因之二：行動網路NAT導致UDP丟包.
-            Tunnelblick 與 OpenVPN 雖然使用UDP，但內部實作卻類似TCP與SSL/TLS，步驟多，在行動網路容易中途斷掉.
-        有鑑於此，不用 Tunnelblick 與 OpenVPN
-    用低階的 Router
-        Router：需有 固定 Public IP (x.x.x.x), 需支援 Port Forward.
-        因為不使用 Tunnerblick 與 OpenVPN，所以 Router 並不需要 VPN 高階功能 (有則關閉之)，只需便宜的 Router.
-    SSH 一行指令登入 DGX Spark
+    
+
+    SHH 一行指令登入 DGX Spark
+        以 DGX Spark 為 Server, 以 Mac/PC 為 Client.
+
+    同子網內網
+        指 Mac/PC (Client) 與 DGX Spark (Server) 必須位於相同一台 router 所分配的內網IP (192.168.x.x) 區段之下
+        嚴重限制了 Client/Server 之間的物理距離
+            若這不能滿足你的需要，請忽略這篇 (第01天B) 同子網內網操控 指南
+                你需要的是 (第01天A) 外網遠端操控 指南，打破物理距離限制
 .....
 
 .....
 
-恭喜你！從此你能從任何地方連回你心愛的 DGX Spark 了！
+恭喜你！從此你能從「同子網內網」連上你心愛的 DGX Spark 了！
 
 ---
 
