@@ -20,18 +20,18 @@ This severely limits the physical distance between Client and Server.
 
 ---
 
-## 2. On DGX Spark Server, find it's IP Address in the same subnet
-方法一
+## 2. On the DGX Spark server, query its internal IP address on the same subnet
+Method 1
 ```
 jostname -I
 ```
-找到有個(192.168.x.x)開頭的地址，就是 DGX Spark 的 同子網內網IP位址，記錄起來。
+Find the DGX Spark's IP address that starts with (192.168.x.x), and make a note of it.
 
-方法二
+Method 2
 ```
 ifconfig
 ```
-找到 inet addr: 或 inet 文字後面有個(192.168.x.x)開頭的地址，就是 DGX Spark 的 同子網內網IP位址，記錄起來。
+Find the text `inet addr:` or `inet`, followed by an address that starts with (192.168.x.x)—this is the DGX Spark's internal IP address on the same subnet—and make a note of it.
 
 ---
 
