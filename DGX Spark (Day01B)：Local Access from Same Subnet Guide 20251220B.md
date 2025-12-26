@@ -4,6 +4,7 @@
 > **From a local network on Mac/PC → SSH login to DGX Spark at the same subnet**
 > - Simple one-line **SSH** command **login to DGX Spark**
 >   - Use DGX Spark as Server. (Mac/PC = Client)
+>   - After rebooting, simply have the Mac/PC Client run this SHH command in step 9.1 - it's super easy.
 > - **Same Subnet LAN Access**
 >   - Refers to the situation where the Mac/PC (Client) and DGX Spark (Server) must be located under the same intranet IP segment (192.168.x.x) assigned by the same router. 
 >   - This severely limits the physical distance between Client and Server.
@@ -40,6 +41,8 @@ ifconfig
 ## 3. Login and Command the DGX Spark Server
 ### 3.1 SHH Login to the DGX Spark Server from your Mac/PC Client
 Use the following simple one-line **SSH** to login DGX Spark Server. (you'll need to enter the DGX Spark boot password)
+
+<sub><sup>＊After rebooting, simply have the Mac/PC Client run this SHH command in step 3.1 - it's super easy.</sup></sub>
 ```
 # Remove `<DGX Spark username>`, and replace it with the username used to log in after DGX Spark boots
 # Remove `<192.168.x.x>`, and replace it with DGX Spark intranet IP address (192.168.x.x)
@@ -67,3 +70,4 @@ You should see both methods working correctly.
 ---
 
 # **Congratulations — your Mac/PC can now reach your DGX Spark from the same subnet.**
+<sub><sup>＊After rebooting, simply have the Mac/PC Client run this SHH command in step 9.1 - it's super easy.</sup></sub>
