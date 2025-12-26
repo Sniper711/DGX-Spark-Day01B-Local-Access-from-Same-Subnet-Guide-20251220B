@@ -5,7 +5,7 @@
 > - Simple one-line **SSH** command **login to DGX Spark**
 >   - Use DGX Spark as Server. (Mac/PC = Client)
 > - **Same Subnet LAN Access**
->   - Refers to the situation where the Mac/PC (Client) and DGX Spark (Server) must be located under the same internal network IP segment (192.168.x.x) assigned by the same router. 
+>   - Refers to the situation where the Mac/PC (Client) and DGX Spark (Server) must be located under the same intranet IP segment (192.168.x.x) assigned by the same router. 
 >   - This severely limits the physical distance between Client and Server.
 >     - If this cannot meet your needs, please skip this: (Day01B) Local Access from Same Subnet Guide.
 >       - What you need is: [(Day01A) Remote Access from Internet Guide](https://github.com/Sniper711/DGX-Spark-Day01A-Remote-Access-from-Internet-Guide-20251220A/blob/main/DGX%20Spark%20(Day01A)%20Remote%20Access%20Guide%2020251220A.md), which breaks the physical distance limitation.
