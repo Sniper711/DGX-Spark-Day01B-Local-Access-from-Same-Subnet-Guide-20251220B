@@ -17,7 +17,7 @@ From a local network on Mac/PC → SSH login to DGX Spark at the same subnet
 
 .....
 
-Congratulations — your Mac/PC can now reach your DGX Spark from anywhere.
+Congratulations — your Mac/PC can now reach your DGX Spark from the same subnet.
         
 
 ## 適用情境 與 優缺點
