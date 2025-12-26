@@ -47,12 +47,16 @@ ssh <DGX Spark username>@<192.168.x.x>
 ### 3.2 Two Example Methods to Command the DGX Spark Server from your Mac/PC Client
 **On your Mac/PC Client**
 
-Method 1: Command the DGX Spark server to report GPU temperature (GPU Temp column) and GPU utilization (GPU-Util column) once per second.
+Method 1: 
+
+Command the DGX Spark server to report GPU temperature (GPU Temp column) and GPU utilization (GPU-Util column) once per second.
 ```
 watch -n 1 nvidia-smi
 ```
 
-Method 2: Command the DGX Spark server to report total system memory (total column) and current usage (used column) once per second.
+Method 2: 
+
+Command the DGX Spark server to report total system memory (total column) and current usage (used column) once per second.
 ```
 watch -n 1 free -h
 ```
