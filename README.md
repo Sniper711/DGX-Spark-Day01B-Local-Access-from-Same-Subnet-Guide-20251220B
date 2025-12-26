@@ -2,7 +2,7 @@
 # DGX Spark (第01天B)：同子網內網操控 指南 20251220B 🟩 [中文版](https://github.com/Sniper711/DGX-Spark-Day01B-Local-Access-from-Same-Subnet-Guide-20251220B/blob/main/DGX%20Spark%20(%E7%AC%AC01%E5%A4%A9B)%EF%BC%9A%E5%90%8C%E5%AD%90%E7%B6%B2%E5%85%A7%E7%B6%B2%E6%93%8D%E6%8E%A7%20%E6%8C%87%E5%8D%97%2020251220B.md)
 
 
-## Scenarios & Advantages
+## Scenarios & Pros/Cons
 
 From an external network on Mac/PC → via WireGuard VPN → SSH login to DGX Spark at home
 
@@ -11,17 +11,15 @@ From an external network on Mac/PC → via WireGuard VPN → SSH login to DGX Sp
         The VPN penetration rate is extremely high, and using a mobile hotspot is rarely blocked by carriers.
         Configuring WireGuard with UDP port 51820 along with keepalive is the right move.
         90% of mobile networks in Taiwan allow WireGuard, but OpenVPN does not.
-    Do not use Tunnelblick / OpenVPN, no need for an expensive router's built-in VPN.
-        Reason 1 for VPN connection failure when using mobile hotspots: carrier intentionally block mobile network UDP/TCP 1194 Ports VPN traffic.
-            Using TCP port 443 can enhance VPN penetration rates, which is relatively stable but slower, and may cause TCP-over-TCP head-of-line blocking leading to meltdown issues on mobile networks.
-            Some expensive routers cannot change TCP port# which is also a problem (only TCP port 1194 is available).
-        Reason 2 for VPN connection failure when using mobile hotspots: mobile network NAT causes UDP packet loss.
-            Although Tunnelblick and OpenVPN use UDP, their internal implementation is similar to TCP and SSL/TLS, with many steps, making it prone to disconnections on mobile networks.
-        Therefore, there is no need for Tunnelblick and OpenVPN
-    Use a low-end Router
-        Router: must have a fixed Public IP (x.x.x.x) and support Port Forwarding.
-        Since Tunnelblick and OpenVPN are not used, the Router does not need advanced VPN features (if available, disable them), just a cheap Router is sufficient.
+    From a local network on Mac/PC → SSH login to DGX Spark at the same subnet
+
     Simple one-line SSH command login to DGX Spark
+        Use DGX Spark as Server. (Mac/PC = Client)
+    Same Subnet LAN Access
+        Refers to the situation where the Mac/PC (Client) and DGX Spark (Server) must be located under the same intranet IP segment (192.168.x.x) assigned by the same router.
+        This severely limits the physical distance between Client and Server.
+            If this cannot meet your needs, please skip this: (Day01B) Local Access from Same Subnet Guide.
+                What you need is: (Day01A) Remote Access from Internet Guide, which breaks the physical distance limitation.
 .....
 
 .....
@@ -29,7 +27,7 @@ From an external network on Mac/PC → via WireGuard VPN → SSH login to DGX Sp
 Congratulations — your Mac/PC can now reach your DGX Spark from anywhere.
         
 
-## 適用情境 與 優點
+## 適用情境 與 優缺點
 
 人在外網用 Mac/PC → 透過 WireGuard VPN → SSH 登入家中 DGX Spark
 
