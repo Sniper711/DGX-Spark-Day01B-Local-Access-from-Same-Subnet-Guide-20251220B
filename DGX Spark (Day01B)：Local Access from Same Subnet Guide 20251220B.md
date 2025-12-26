@@ -14,13 +14,13 @@
 
 ## 1. Confirm the Network Topology 
 
-Mac/PC (Client) and DGX Spark (Server) **must be located under the same internal network IP segment (192.168.x.x) assigned by the same router**.
+Mac/PC (Client) and DGX Spark (Server) **must be located under the same intranet IP segment (192.168.x.x) assigned by the same router**.
 
 This severely limits the physical distance between Client and Server.
 
 ---
 
-## 2. On the DGX Spark server, query its internal IP address on the same subnet
+## 2. On the DGX Spark server, query its intranet IP address on the same subnet
 Method 1
 
 Find the DGX Spark's IP address that starts with (192.168.x.x), and make a note of it.
@@ -30,7 +30,7 @@ jostname -I
 
 Method 2
 
-Find the text `inet addr:` or `inet`, followed by an address that starts with (192.168.x.x)—this is the DGX Spark's internal IP address on the same subnet—and make a note of it.
+Find the text `inet addr:` or `inet`, followed by an address that starts with (192.168.x.x)—this is the DGX Spark's intranet IP address on the same subnet—and make a note of it.
 ```
 ifconfig
 ```
