@@ -67,3 +67,4 @@ You should see both methods working correctly.
 ---
 
 # **恭喜你！從此你能從「同子網內網」連上你心愛的 DGX Spark 了！**
+# **Congratulations — your Mac/PC can now reach your DGX Spark from the same subnet.**
