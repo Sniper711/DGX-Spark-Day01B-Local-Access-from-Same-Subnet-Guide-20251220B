@@ -6,13 +6,6 @@
 
 From a local network on Mac/PC → SSH login to DGX Spark at the same subnet
 
-    Use WireGuard VPN
-        Use DGX Spark as VPN Server. (Mac/PC = Client)
-        The VPN penetration rate is extremely high, and using a mobile hotspot is rarely blocked by carriers.
-        Configuring WireGuard with UDP port 51820 along with keepalive is the right move.
-        90% of mobile networks in Taiwan allow WireGuard, but OpenVPN does not.
-    From a local network on Mac/PC → SSH login to DGX Spark at the same subnet
-
     Simple one-line SSH command login to DGX Spark
         Use DGX Spark as Server. (Mac/PC = Client)
     Same Subnet LAN Access
