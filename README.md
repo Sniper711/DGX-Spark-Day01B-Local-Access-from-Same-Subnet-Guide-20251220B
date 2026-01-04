@@ -50,3 +50,7 @@ Congratulations — your Mac/PC can now reach your DGX Spark from the same subne
 Davis Lin (Sniper711) . 
 Unauthorized article copying, distribution, or modification is prohibited.
 
+
+<img width="617" height="508" alt="Day01B" src="https://github.com/user-attachments/assets/0bb62d13-d3ed-475f-9af6-a64671444efd" />
+
+
