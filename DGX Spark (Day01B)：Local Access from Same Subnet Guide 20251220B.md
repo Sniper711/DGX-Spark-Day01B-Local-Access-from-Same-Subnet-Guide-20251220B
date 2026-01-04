@@ -15,7 +15,6 @@
 <img width="617" height="508" alt="Day01B" src="https://github.com/user-attachments/assets/4601a2dd-d8cf-4dd1-bfa5-db8f5b313b52" />
 
 
-
 ---
 
 
