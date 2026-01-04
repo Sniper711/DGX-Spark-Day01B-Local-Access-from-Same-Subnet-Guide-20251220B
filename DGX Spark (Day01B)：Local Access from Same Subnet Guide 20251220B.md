@@ -11,7 +11,13 @@
 >     - If this cannot meet your needs, please skip this: (Day01B) Local Access from Same Subnet Guide.
 >       - What you need is: [(Day01A) Remote Access from Internet Guide](https://github.com/Sniper711/DGX-Spark-Day01A-Remote-Access-from-Internet-Guide-20251220A/blob/main/DGX%20Spark%20(Day01A)%20Remote%20Access%20from%20Internet%20Guide%2020251220A.md), which breaks the physical distance limitation.
 
+
+<img width="617" height="508" alt="Day01B" src="https://github.com/user-attachments/assets/4601a2dd-d8cf-4dd1-bfa5-db8f5b313b52" />
+
+
+
 ---
+
 
 ## 1. Confirm the Network Topology 
 
